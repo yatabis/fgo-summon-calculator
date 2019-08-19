@@ -3,7 +3,6 @@ const vm = new Vue({
   data: {
     saint_quartz: 0,
     summon_ticket: 0,
-    summon: 0,
     rarity: 5,
     np_level: 1,
     latest: {
@@ -12,12 +11,15 @@ const vm = new Vue({
       summon: 2
     }
   },
-  watch: {
-    saint_quartz: function() {
-      this.updateSummon()
-    },
-    summon_ticket: function () {
-      this.updateSummon()
+  computed: {
+    summon: {
+      get: function () {
+        return Math.floor((Math.floor(this.saint_quartz / 3) + this.summon_ticket) * 1.1)
+      },
+      set: function (summon) {
+        this.saint_quartz = (Math.floor(summon / 11) * 10 + summon % 11) * 3
+        this.summon_ticket = 0
+      }
     }
   },
   methods: {
@@ -25,11 +27,8 @@ const vm = new Vue({
       for (let k of Object.keys(this.latest)) {
         this.latest[k]++
       }
-      this.latest[key] = 0;
-      for (let k of Object.keys(this.latest)) console.log(k, this.latest[k]);
+      this.latest[key] = 0
+      for (let k of Object.keys(this.latest)) console.log(k, this.latest[k])
     },
-    updateSummon: function() {
-      this.summon = Math.floor((Math.floor(this.saint_quartz / 3) + this.summon_ticket) * 1.1)
-    }
   }
-});
+})
