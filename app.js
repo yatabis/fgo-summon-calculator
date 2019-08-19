@@ -5,6 +5,7 @@ const vm = new Vue({
     summon_ticket: 0,
     summon: 0,
     rarity: 5,
+    np_level: 1,
     latest: {
       saint_quartz: 0,
       summon_ticket: 1,
