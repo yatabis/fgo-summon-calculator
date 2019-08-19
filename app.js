@@ -28,7 +28,7 @@ const vm = new Vue({
       for (let k of Object.keys(this.latest)) console.log(k, this.latest[k]);
     },
     updateSummon: function() {
-      this.summon = Math.floor((Math.floor(this.saint_quartz / 3) + Number(this.summon_ticket)) * 1.1)
+      this.summon = Math.floor((Math.floor(this.saint_quartz / 3) + this.summon_ticket) * 1.1)
     }
   }
 });

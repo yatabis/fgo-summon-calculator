@@ -13,13 +13,13 @@
 
 <main id="main">
   <label for="saint-quartz">聖晶石　　</label>
-  <input type="number" id="saint-quartz" class="input" v-model="saint_quartz" @focus="updateLatest('saint_quartz')">個<br>
+  <input type="number" id="saint-quartz" class="input" v-model.number="saint_quartz" @focus="updateLatest('saint_quartz')">個<br>
 
   <label for="summon-ticket">呼符　　　</label>
-  <input type="number" id="summon-ticket" class="input" v-model="summon_ticket" @focus="updateLatest('summon_ticket')">個<br>
+  <input type="number" id="summon-ticket" class="input" v-model.number="summon_ticket" @focus="updateLatest('summon_ticket')">個<br>
 
   <label for="summon">召喚回数　</label>
-  <input type="number" id="summon" class="input" v-model="summon" @focus="updateLatest('summon')">連<br>
+  <input type="number" id="summon" class="input" v-model.number="summon" @focus="updateLatest('summon')">連<br>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
