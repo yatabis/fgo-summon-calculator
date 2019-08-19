@@ -12,14 +12,14 @@
 <header><h1>FGO ガチャ確率計算</h1></header>
 
 <main id="main">
-  <label for="summon-quartz">聖晶石　</label>
-  <input type="number" id="summon-quartz" class="input" v-model="saint_quartz">個<br>
+  <label for="saint-quartz">聖晶石　　</label>
+  <input type="number" id="saint-quartz" class="input" v-model="saint_quartz" @focus="updateLatest('saint_quartz')">個<br>
 
-  <label for="summon-ticket">呼符　　</label>
-  <input type="number" id="summon-ticket" class="input" v-model="summon_ticket">個<br>
+  <label for="summon-ticket">呼符　　　</label>
+  <input type="number" id="summon-ticket" class="input" v-model="summon_ticket" @focus="updateLatest('summon_ticket')">個<br>
 
-  <label for="summon">召喚回数</label>
-  <input type="number" id="summon" class="input" v-model="summon">連<br>
+  <label for="summon">召喚回数　</label>
+  <input type="number" id="summon" class="input" v-model="summon" @focus="updateLatest('summon')">連<br>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
