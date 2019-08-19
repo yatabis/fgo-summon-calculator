@@ -20,6 +20,15 @@
 
   <label for="summon">召喚回数　</label>
   <input type="number" id="summon" class="input" v-model.number="summon" @focus="updateLatest('summon')">連<br>
+
+  <label for="rarity">レアリティ</label>
+  <select name="rarity" id="rarity" class="input" v-model.number="rarity">
+    <option value="5">☆5</option>
+    <option value="4">☆4</option>
+    <option value="3">☆3</option>
+    <option value="2">☆2</option>
+    <option value="1">☆1</option>
+  </select>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
