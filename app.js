@@ -37,10 +37,9 @@ const vm = new Vue({
         let prob = 0
         for (let n = this.np_level; n <= this.summon; n++) {
           let p = combination(this.summon, n) * this.hit ** n * (1 - this.hit) ** (this.summon - n) * 100
-          if (p.toFixed(5) == 0) break
-          console.log(p.toFixed(3))
+          if (p.toFixed(5) === "0.00000") break
+          // console.log(p.toFixed(3))
           prob += p
-          // prob += combination(this.summon, n) * this.hit ** n * (1 - this.hit) ** (this.summon - n)
         }
         return prob.toFixed(3)
       }
