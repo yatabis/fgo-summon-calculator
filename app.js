@@ -34,7 +34,15 @@ const vm = new Vue({
     },
     probability: {
       get: function () {
-        return combination(this.summon, this.np_level) * this.hit**this.np_level * (1 - this.hit) ** (this.summon - this.np_level)
+        let prob = 0
+        for (let n = this.np_level; n <= this.summon; n++) {
+          let p = combination(this.summon, n) * this.hit ** n * (1 - this.hit) ** (this.summon - n) * 100
+          if (p.toFixed(5) == 0) break
+          console.log(p.toFixed(3))
+          prob += p
+          // prob += combination(this.summon, n) * this.hit ** n * (1 - this.hit) ** (this.summon - n)
+        }
+        return prob.toFixed(3)
       }
     }
   },
@@ -44,7 +52,6 @@ const vm = new Vue({
         this.latest[k]++
       }
       this.latest[key] = 0
-      for (let k of Object.keys(this.latest)) console.log(k, this.latest[k])
     },
   }
 })
